@@ -1,0 +1,24 @@
+{  
+  "name": "bulletScreen",  
+  "version": "0.9.0",  
+  "manifest_version": 2,
+  "description": "bulletScreen",  
+  "permissions":["tabs","<all_urls>", "http://*/*", "https://*/*"],
+  "icons": { "128": "icon_128.png" },
+  "content_scripts": [
+    {
+        "js": [
+            "lib/crxTool.min.js"
+            
+        ],
+        "matches": ["<all_urls>"],
+        "all_frames": false,
+        "run_at": "document_end"
+    }
+  ],
+  "browser_action": {  
+    "default_icon": "icon.png" ,
+    "default_title": "弹幕",
+    "default_popup": "popup.html"
+  }  
+} 
