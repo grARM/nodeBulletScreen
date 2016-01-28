@@ -1,0 +1,70 @@
+{
+  "family": "seajs",
+  "name": "seajs",
+  "version": "3.0.1",
+  "description": "A Module Loader for the Web",
+  "homepage": "http://seajs.org/",
+  "keywords": [
+    "module",
+    "loader"
+  ],
+  "author": {
+    "name": "Frank Wang",
+    "email": "lifesinger@gmail.com"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "seatools": "0.5.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/seajs/seajs.git"
+  },
+  "main": "./lib/sea.js",
+  "spm": {
+    "main": "./dist/sea.js"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://seajs.org/LICENSE.md"
+    }
+  ],
+  "gitHead": "aca4d79215c62fe6bc50a59b8899704ae3dd98e8",
+  "bugs": {
+    "url": "https://github.com/seajs/seajs/issues"
+  },
+  "_id": "seajs@3.0.1",
+  "scripts": {},
+  "_shasum": "0b0bae14aaeeec10925d941d416bc3ae81f4b256",
+  "_from": "seajs@*",
+  "_npmVersion": "2.8.3",
+  "_nodeVersion": "1.8.1",
+  "_npmUser": {
+    "name": "army8735",
+    "email": "army8735@qq.com"
+  },
+  "dist": {
+    "shasum": "0b0bae14aaeeec10925d941d416bc3ae81f4b256",
+    "size": 367875,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/seajs/download/seajs-3.0.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "army8735",
+      "email": "army8735@qq.com"
+    },
+    {
+      "name": "lifesinger",
+      "email": "lifesinger@gmail.com"
+    }
+  ],
+  "directories": {},
+  "publish_time": 1429671643265,
+  "_cnpm_publish_time": 1429671643265,
+  "_resolved": "https://registry.npm.taobao.org/seajs/download/seajs-3.0.1.tgz"
+}

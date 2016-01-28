@@ -1,0 +1,10 @@
+.ui-dialog-cnt{text-align: center;}
+
+/**/
+#wrap-panel{width: 100%;margin-top: 10px;}
+#bul-textarea-box{height: 240px;}
+
+#bul-textarea{height: 200px;}
+
+#size-select , #color-select{border-top: 10px solid #f8f8f8; border-bottom: 2px solid #f8f8f8;}
+#size-select label, #color-select label{left:15px;}
