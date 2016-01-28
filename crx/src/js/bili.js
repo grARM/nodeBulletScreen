@@ -67,9 +67,20 @@ $(document).ready(function(){
 			if(server && server != ''){
 				this.server = server;
 			}
+			this.loadCSS();
 			this.render();
 			this.eventRun();
 			this.longLinkStart();
+		},
+		loadCSS: function(){
+			var that = this;
+			var cssfiles = [
+				'/javascripts/lib/frozen/css/frozen.css',
+				'/stylesheets/base.css'
+			];
+			$.each(cssfiles, function(i,v){
+				$('head').append('<link rel="stylesheet" type="text/css" href="'+that.server+v'" />');
+			})
 		},
 		render: function(){
 			var bulletDom = $('<div id="bullet-ctl" style="position: fixed; right: 0; top: 50px; width:200px; height: 100px;background-color: rgba(255,255,255,0.5);">'+
