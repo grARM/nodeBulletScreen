@@ -24,7 +24,7 @@ $.extend({
 
 $(document).ready(function(){
 	var bullet = {
-		server: '127.0.0.1:3000',
+		server: '127.0.0.1:8081',
 		dom: {},
 		onoff: true,
 		speed: 1,
@@ -67,7 +67,7 @@ $(document).ready(function(){
 			if(server && server != ''){
 				this.server = server;
 			}
-			this.loadCSS();
+			//this.loadCSS();
 			this.render();
 			this.eventRun();
 			this.longLinkStart();
@@ -79,8 +79,8 @@ $(document).ready(function(){
 				'/stylesheets/base.css'
 			];
 			$.each(cssfiles, function(i,v){
-				$('head').append('<link rel="stylesheet" type="text/css" href="'+that.server+v'" />');
-			})
+				$('head').append('<link rel="stylesheet" type="text/css" href="'+that.server+v+'" />');
+			});
 		},
 		render: function(){
 			var bulletDom = $('<div id="bullet-ctl" style="position: fixed; right: 0; top: 50px; width:200px; height: 100px;background-color: rgba(255,255,255,0.5);">'+
@@ -140,14 +140,14 @@ $(document).ready(function(){
 		longLinkCtl:function(){
 			var that = this;
 			var time = setInterval(function(){
-				$.getJsonUtf8('http://'+that.server+'/ajaxs/longLink',{
+				$.get('http://'+that.server+'/ajaxs/longLink',{
 					"lastDate": that.lastDate
 				}, function (res){
 					if(res.errorCode != 0){return;}
 					that.addBullets(res.data);
 					that.lastDate = res.lastDate;
 					that.showBullets();
-				});
+				}, 'json');
 			}, 3000);
 			return time;
 		}

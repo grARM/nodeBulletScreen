@@ -4,5 +4,9 @@ $(document).ready(function(){
 		crxTool.send('serverInit', {
 			server: server
 		}, function(){});
+
+		$('#qr-code').qrcode({
+			text	: "http://"+server+"/pages/bulletClient.html"
+		}).show();
 	});
 });
