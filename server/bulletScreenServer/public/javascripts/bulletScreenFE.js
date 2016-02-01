@@ -29,6 +29,7 @@ $(document).ready(function(){
 		speed: 1,
 		longLinkTime: 0,
 		bullets: [],
+		RegScript: (/<script>/g),
 		screenSize: {
 			"width": $(window).width(),
 			"height": $(window).height()
@@ -48,6 +49,9 @@ $(document).ready(function(){
 			showArr = showArr.concat(that.bullets);
 			that.bullets.length = 0;
 			$.each(showArr, function (iShow, vShow){
+				if(!vShow.txt || that.RegScript.test(vShow.txt)){
+					return true;
+				}
 				that.bulletAnimate(vShow);
 			});
 		},
