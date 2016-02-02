@@ -5,8 +5,11 @@ $(document).ready(function(){
 			server: server
 		}, function(){});
 
+		var clientUrl = "http://"+server+"/pages/bulletClient.html";
+		$('#qr-url a').attr('href', clientUrl).parent().show();
+
 		$('#qr-code').qrcode({
-			text	: "http://"+server+"/pages/bulletClient.html"
+			text	: clientUrl
 		}).show();
 	});
 });
