@@ -2,10 +2,12 @@ define(function (require, exports, module){
 	var $ = require('zepto');
 	var frozen = require('frozen');
 
+
 	Zepto(function($){
 		var textarea = $('#bul-textarea');
 		var sizeSel = $('#size-select .ui-select select');
 		var colorSel = $('#color-select .ui-select select');
+		var regUnSafety = /(link)|(script)|(style)/gi;
 
 		var bulletDialog = function(option, cb){
 			if(!$.dialog || typeof $.dialog == 'undefined'){
@@ -48,6 +50,14 @@ define(function (require, exports, module){
 				return;
 			}
 
+			if(!regUnSafety.test(sData.txt)){
+				bulletDialog({
+					title: '子弹为组装未完成',
+					content: '弹幕内容不能包含危险脚本'
+				});				
+				return;
+			}
+
 			$.post('/ajaxs/addBullet', sData, function (res){
 				console.log(res);
 				if(res.errorCode == 0){
@@ -59,22 +69,12 @@ define(function (require, exports, module){
 				}
 				
 			});
-
-
 		});
 
 
 		$('#btn-bullet-clean').on('tap', function(){
 			textarea.val('');
 		});
-
-
-
-
-
-
-
-
 
 	});
 

@@ -29,7 +29,7 @@ $(document).ready(function(){
 		onoff: true,
 		speed: 1,
 		longLinkTime: 0,
-		RegScript: (/(script)|(SCRIPT)/gi),
+		RegTxt: (/(style)|(link)|(script)/gi),
 		bullets: [],
 		screenSize: {
 			"width": $(window).width(),
@@ -41,7 +41,10 @@ $(document).ready(function(){
 			// this.bullets.concat(arr);
 			$.each(arr, function (i,v){
 				that.bullets.push(v);
-			})
+			});
+		},
+		txtSafety: function(txt){
+			return this.RegTxt.test(txt);
 		},
 		showBullets: function(){
 			var that = this;
@@ -50,9 +53,7 @@ $(document).ready(function(){
 			showArr = showArr.concat(that.bullets);
 			that.bullets.length = 0;
 			$.each(showArr, function (iShow, vShow){
-				if(!vShow.txt || that.RegScript.test(vShow.txt)){
-					return true;
-				}
+				that.txtSafety(vShow.txt);
 				that.bulletAnimate(vShow);
 			});
 		},
