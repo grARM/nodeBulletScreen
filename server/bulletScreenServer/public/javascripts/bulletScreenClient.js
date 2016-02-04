@@ -50,7 +50,7 @@ define(function (require, exports, module){
 				return;
 			}
 
-			if(!regUnSafety.test(sData.txt)){
+			if(regUnSafety.test(sData.txt)){
 				bulletDialog({
 					title: '子弹为组装未完成',
 					content: '弹幕内容不能包含危险脚本'
