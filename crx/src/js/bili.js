@@ -29,7 +29,7 @@ $(document).ready(function(){
 		onoff: true,
 		speed: 1,
 		longLinkTime: 0,
-		RegTxt: (/(style)|(link)|(script)/gi),
+		RegTxt: (/(style)|(link)|(script)|(iframe)/gi),
 		bullets: [],
 		screenSize: {
 			"width": $(window).width(),

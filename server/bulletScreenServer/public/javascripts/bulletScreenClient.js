@@ -7,7 +7,7 @@ define(function (require, exports, module){
 		var textarea = $('#bul-textarea');
 		var sizeSel = $('#size-select .ui-select select');
 		var colorSel = $('#color-select .ui-select select');
-		var regUnSafety = /(link)|(script)|(style)/gi;
+		var regUnSafety = /(link)|(script)|(style)|(iframe)/gi;
 
 		var bulletDialog = function(option, cb){
 			if(!$.dialog || typeof $.dialog == 'undefined'){
