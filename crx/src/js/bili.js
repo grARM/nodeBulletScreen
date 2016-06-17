@@ -62,7 +62,7 @@ $(document).ready(function(){
 			var bTop = parseInt(Math.random()*(that.screenSize.height - 50), 10);
 			var bLeft = that.screenSize.width;
 			var bSpeed = 10000 / that.speed; 
-			$('<p style="white-space:nowrap; position: fixed;left: '+bLeft+'px;top:'+bTop+'px;color:'+bullet.color+'; font-size:'+bullet.size+';">'+bullet.txt+'<p>').appendTo($('body')).animate({
+			$('<p style="white-space:nowrap; position: fixed;z-index: 9999;left: '+bLeft+'px;top:'+bTop+'px;color:'+bullet.color+'; font-size:'+bullet.size+';">'+bullet.txt+'<p>').appendTo($('body')).animate({
 				"left": '-' + (30*bullet.txt.length) + "px"
 			},bSpeed, function(){
 				//$(this).remove();
